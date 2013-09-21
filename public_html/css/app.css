@@ -19,6 +19,7 @@ html, body, section, .page {
 	color: lightgrey;
 	float: left;
 	position: absolute;
+	overflow-y: auto;
 	
 	-moz-transform: translateX(100%);
 	-webkit-transform: translateX(100%);

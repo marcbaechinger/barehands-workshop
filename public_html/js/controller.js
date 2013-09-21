@@ -6,6 +6,8 @@
 			container = document.getElementById(options.id),
 			actions = options.actions || {};
 		
+		this.render = options.render;
+		
 		if (options.elements) {
 			this.queryElements(options.elements, container);
 		}
@@ -23,7 +25,11 @@
 		}
 		
 		if (options.init) {
-			options.init.call(this, options);
+			options.init.call(this, options, container);
+		}
+		
+		if (options.model && this.render) {
+			this.render(options.model, container);
 		}
 	};
 	Controller.prototype.queryElements = function (spec, container) {
