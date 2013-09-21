@@ -9,8 +9,9 @@
 		
 		var eventBus = new Observable();
 		
-		eventBus.bind("show-detail", function() {
+		eventBus.bind("selection-changed", function(model) {
 			body.classList.add("page-detail");
+			detailController.setModel(model);
 		});
 		
 		eventBus.bind("hide-detail", function() {
@@ -23,12 +24,11 @@
 			actions: {
 				show: function(ev) {
 					var item = ev.target.parentNode;
-					detailController.setModel({
+					this.eventBus.emit("selection-changed", {
 						name: text(item.querySelector("h3")),
 						src: ev.target.src,
 						country: text(item.querySelector("label"))
 					});
-					this.eventBus.emit("show-detail");
 				}
 			}
 		});
