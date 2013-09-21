@@ -39,6 +39,15 @@ html, body, section, .page {
 	-o-transform: translateX(0);
 	transform: translateX(0);
 }
+
+.page-detail > .detail {
+	-moz-transform: translateX(0);
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	transform: translateX(0);
+}
+
 ul {
 	list-style: none;
 	margin: 0;
