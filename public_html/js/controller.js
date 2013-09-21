@@ -16,13 +16,14 @@
 				actions[action].apply(that, arguments);
 			}
 		}, false);
-		
-		if (options.init) {
-			options.init.call(this, options);
-		}
+
 		
 		if (options.eventBus) {
 			this.eventBus = options.eventBus;
+		}
+		
+		if (options.init) {
+			options.init.call(this, options);
 		}
 	};
 	Controller.prototype.queryElements = function (spec, container) {
