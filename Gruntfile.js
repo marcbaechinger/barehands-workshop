@@ -1,7 +1,7 @@
 /*global module:false, require: false */
 module.exports = function(grunt) {
 
-	var DEFAULT_TASKS = ["jshint", "copy", "cssmin", "htmlcompressor", "uglify"],
+	var DEFAULT_TASKS = [/*"jshint", */"copy", "cssmin", "htmlcompressor", "uglify"],
 		WATCH_FILES = ['Gruntfile.js', 'public_html/js/**/*.js','public_html/**/*.html','public_html/**/*.css'],
 		DOC_ROOT = "public_html/",
 		DIST_DIR = "build/";
