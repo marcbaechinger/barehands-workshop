@@ -3,6 +3,11 @@
 (function (global) {
 	
 	var controller = new Controller({
-		id: "players"
+		id: "players",
+		actions: {
+			show: function(ev) {
+				alert("delegated");
+			}
+		}
 	});
 }(this));

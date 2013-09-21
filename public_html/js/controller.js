@@ -2,12 +2,14 @@
 /*jslint browser: true */
 (function (global) {
 	var Controller = function (options) {
-		var container = document.getElementById(options.id);
+		var that = this,
+			container = document.getElementById(options.id),
+			actions = options.actions || {};
 		
 		container.addEventListener("click", function (ev) {
 			var action = ev.target.dataset.action;
-			if (action) {
-				alert(action);
+			if (action && actions[action]) {
+				actions[action].apply(that, arguments);
 			}
 		}, false);
 	};
