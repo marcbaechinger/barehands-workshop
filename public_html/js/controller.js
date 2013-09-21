@@ -22,7 +22,7 @@
 		}
 		
 		if (options.eventBus) {
-			this.eventBus = eventBus;
+			this.eventBus = options.eventBus;
 		}
 	};
 	Controller.prototype.queryElements = function (spec, container) {
