@@ -20,6 +20,10 @@
 		if (options.init) {
 			options.init.call(this, options);
 		}
+		
+		if (options.eventBus) {
+			this.eventBus = eventBus;
+		}
 	};
 	Controller.prototype.queryElements = function (spec, container) {
 		var name, selector, resultList;

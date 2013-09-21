@@ -6,6 +6,8 @@
 		};
 		
 	var ApplicationController = function(options) {
+		
+		var eventBus = new Observable();
 	
 		var controller = new Controller({
 			id: "players",
