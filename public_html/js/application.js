@@ -15,7 +15,6 @@
 		
 		eventBus.bind("selection-changed", function(model) {
 			body.classList.add("page-detail");
-			detailController.setModel(model);
 		});
 		eventBus.bind("hide-detail", function() {
 			body.classList.remove("page-detail");

@@ -15,11 +15,12 @@
 				}
 			},
 			init: function(options) {
-				this.setModel = function (player) {
-					this.$$.name.innerHTML = player.name;
-					this.$$.image.src = player.src;
-					this.$$.country.innerHTML = player.country;
-				};
+				var elements = this.$$;
+				this.eventBus.bind("selection-changed", function (player) {
+					elements.name.innerHTML = player.name;
+					elements.image.src = player.src;
+					elements.country.innerHTML = player.country;
+				});
 			}
 		});
 	};
