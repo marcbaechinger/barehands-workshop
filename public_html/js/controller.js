@@ -17,6 +17,9 @@
 			}
 		}, false);
 		
+		if (options.init) {
+			options.init.call(this, options);
+		}
 	};
 	Controller.prototype.queryElements = function (spec, container) {
 		var name, selector, resultList;
