@@ -8,9 +8,18 @@
 	var ApplicationController = function(options) {
 		
 		var eventBus = new Observable();
+		
+		eventBus.bind("show-detail", function() {
+			body.classList.add("page-detail");
+		});
+		
+		eventBus.bind("hide-detail", function() {
+			body.classList.remove("page-detail");
+		});
 	
 		var controller = new Controller({
 			id: "players",
+			eventBus: eventBus,
 			actions: {
 				show: function(ev) {
 					var item = ev.target.parentNode;
@@ -19,14 +28,14 @@
 						src: ev.target.src,
 						country: text(item.querySelector("label"))
 					});
-
-					body.classList.add("page-detail");
+					this.eventBus.emit("show-detail");
 				}
 			}
 		});
 	
 		var detailController = new Controller({
 			id: "detail",
+			eventBus: eventBus,
 			elements: {
 				name: ".name",
 				image: ".badge",
@@ -34,7 +43,7 @@
 			},
 			actions: {
 				hide: function () {
-					body.classList.remove("page-detail");
+					this.eventBus.emit("hide-detail");
 				}
 			},
 			init: function(options) {
