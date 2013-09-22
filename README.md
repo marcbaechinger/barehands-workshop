@@ -1,9 +1,5 @@
 barehands-workshop
 ==================
 
-Step 1 - pitch a container
------------
-
-  * index.html: create a list-item page
-  * controller.js: create a Controller catching clicks from container
-  * main.js: instantiate a controller to manage the list page
+<img src="http://blog.zuehlke.com/wp-content/uploads/2013/09/Zuehlke_SWE-Days_Logo_final_SWE-Days-petrol-215x215.jpg" style="margin: 24px auto; display: block;"/>
+created for the <a href="http://blog.zuehlke.com/software-engineering-days-knowledge-transfer-at-zuhlke/">Zühlke Engineering Software Days</a>.
